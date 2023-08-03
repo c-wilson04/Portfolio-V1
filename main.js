@@ -1,5 +1,5 @@
 import './index.css'
-import * as THREE from 'three';
+import * as THREE from "../P1/node_modules/three/build/three.module.js";
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 //Inital canvas resize for both canvas'
 let canvas = document.querySelector('#bg');
