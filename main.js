@@ -1,6 +1,9 @@
 import './index.css'
-import * as THREE from "../P1/node_modules/three/build/three.module.js";
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import * as THREE from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js"
+// ../P1/node_modules/three/addons/loaders/GLTFLoader.js"
+// ../P1/node_modules/three/build/three.module.js
+// 'three/addons/loaders/GLTFLoader.js'
 //Inital canvas resize for both canvas'
 let canvas = document.querySelector('#bg');
     canvas.style.width = '100%';
@@ -12,7 +15,6 @@ let canvas2 = document.querySelector('#secondcanvas');
 const loader = new GLTFLoader();
 let firstOBJ;
 let secondOBJ;
-
 
 const scene = new THREE.Scene()
 canvas = document.querySelector('#bg')
