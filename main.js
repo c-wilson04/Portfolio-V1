@@ -1,11 +1,6 @@
 import './index.css'
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js"
-// import modelURL from "./3D/Car/scene.gltf"
-// import modelURL2 from "./3D/WireFrame/WireFrameFace_Omar.gltf"
-// ../P1/node_modules/three/addons/loaders/GLTFLoader.js"
-// ../P1/node_modules/three/build/three.module.js
-// 'three/addons/loaders/GLTFLoader.js'
 //Inital canvas resize for both canvas'
 let canvas = document.querySelector('#bg');
     canvas.style.width = '100%';
