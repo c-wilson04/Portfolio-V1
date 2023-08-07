@@ -1,9 +1,6 @@
 import './index.css'
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js"
-// ../P1/node_modules/three/addons/loaders/GLTFLoader.js"
-// ../P1/node_modules/three/build/three.module.js
-// 'three/addons/loaders/GLTFLoader.js'
 //Inital canvas resize for both canvas'
 let canvas = document.querySelector('#bg');
     canvas.style.width = '100%';
@@ -26,10 +23,10 @@ scene.background = new THREE.Color('Black')
 scene.add(camera)
 
 
-loader.load( './3D/obj2/roomn.gltf', function ( gltf ) {
+loader.load( './Car/scene.gltf', function ( gltf ) {
 	scene.add( gltf.scene );
     secondOBJ= gltf.scene.children[0];
-    secondOBJ.scale.set(1,1,1);
+    secondOBJ.scale.set(5,5,5);
 }, undefined, function ( error ) {
 	console.error( error );
 } );
@@ -62,6 +59,9 @@ scene.add(lightHelper)
 function animate(){
     requestAnimationFrame(animate);
     mesh.rotation.y +=0.01;
+    if(secondOBJ)secondOBJ.rotation.y +=0.01;
+    if(secondOBJ)secondOBJ.rotation.x +=0.01;
+    if(secondOBJ)secondOBJ.rotation.z +=0.01;
     //firstOBJ.rotation.z += 0.01;
 
     renderer.render(scene,camera);
@@ -113,7 +113,7 @@ scene2.add(camera2)
 
 
 
-loader2.load( './3D/WireFrame/WireFrameFace_Omar.gltf', function ( gltf ) {
+loader2.load( './WireFrame/WireFrameFace_Omar.gltf', function ( gltf ) {
 	scene2.add( gltf.scene );
     canvas2OBJ= gltf.scene.children[0];
     canvas2OBJ.scale.set(2,2,2);
@@ -142,7 +142,7 @@ scene2.add(lightHelper2)
 
 function animate2(){
     requestAnimationFrame(animate2);
-    canvas2OBJ.rotation.z -=0.01;
+    if(canvas2OBJ) canvas2OBJ.rotation.z -=0.01;
     //firstOBJ.rotation.z += 0.01;
 
     renderer2.render(scene2,camera2);
