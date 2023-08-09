@@ -135,8 +135,8 @@ const ambientLight2= new THREE.AmbientLight(0xffffff)
 ambientLight2.position.set(15,5,5)
 scene2.add(pointLight2,ambientLight2)
 
-const lightHelper2 = new THREE.PointLightHelper(pointLight)
-scene2.add(lightHelper2)
+// const lightHelper2 = new THREE.PointLightHelper(pointLight)
+// scene2.add(lightHelper2)
 
 
 
