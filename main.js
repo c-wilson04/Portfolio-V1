@@ -40,19 +40,25 @@ camera.position.setX(0)
 renderer.render(scene, camera)
 
 const material = new THREE.MeshStandardMaterial({color: 0xFF6347})
-const geometry = new THREE.TorusGeometry(15, 3, 16, 100)
+material.wireframe=true;
+const geometry = new THREE.TorusGeometry(15.4, 3, 9, 100)
 const mesh = new THREE.Mesh(geometry, material)
+mesh.position.set(0,0,0)
 scene.add(mesh)
 
-const pointLight = new THREE.PointLight(0xffffff,1)
-pointLight.position.set(15,5,5)
+const pointLight = new THREE.PointLight(0xffffff,2)
+pointLight.position.set(10,20,0)
+const pointLight12 = new THREE.PointLight(0xffffff,2)
+pointLight12.position.set(-10,-20,0)
 
-const ambientLight= new THREE.AmbientLight(0xffffff,0)
-ambientLight.position.set(15,5,5)
-scene.add(pointLight,ambientLight)
-
-const lightHelper = new THREE.PointLightHelper(pointLight)
-scene.add(lightHelper)
+const rectLight = new THREE.RectAreaLight( 0xffffff, 15, 40, 20 );
+rectLight.position.set( 0, -13, 0 );
+rectLight.lookAt( 0, 0, 0 );
+const rectLight2 = new THREE.RectAreaLight( 0xffffff, 15, 40, 20 );
+rectLight2.position.set( 0, 13, 0 );
+rectLight2.lookAt( 0, 0, 0 );
+scene.add( rectLight, rectLight2 )
+scene.add(pointLight,pointLight12)
 
 
 
