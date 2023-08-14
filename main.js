@@ -1,5 +1,6 @@
 //import './index.css'
 import * as THREE from "three";
+import { AmbientLight } from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js"
 //Inital canvas resize for both canvas'
 let canvas = document.querySelector('#bg');
@@ -27,6 +28,7 @@ loader.load( './dist/Car/scene.gltf', function ( gltf ) {
 	scene.add( gltf.scene );
     secondOBJ= gltf.scene.children[0];
     secondOBJ.scale.set(5,5,5);
+    secondOBJ.position.set(0,0,0)
 }, undefined, function ( error ) {
 	console.error( error );
 } );
@@ -39,7 +41,7 @@ camera.position.setZ(30);
 camera.position.setX(0)
 renderer.render(scene, camera)
 
-const material = new THREE.MeshStandardMaterial({color: 0xFF6347})
+const material = new THREE.MeshBasicMaterial({color: 0xFF6347})
 material.wireframe=true;
 const geometry = new THREE.TorusGeometry(15.4, 3, 9, 100)
 const mesh = new THREE.Mesh(geometry, material)
@@ -59,7 +61,6 @@ rectLight2.position.set( 0, 13, 0 );
 rectLight2.lookAt( 0, 0, 0 );
 scene.add( rectLight, rectLight2 )
 scene.add(pointLight,pointLight12)
-
 
 
 function animate(){
@@ -115,11 +116,7 @@ scene2.background = new THREE.Color('Black')
 scene2.add(camera2)
 
 
-
-
-
-
-loader2.load( './dist//WireFrame/WireFrameFace_Omar.gltf', function ( gltf ) {
+loader2.load( './dist/WireFrame/WireFrameFace_Omar.gltf', function ( gltf ) {
 	scene2.add( gltf.scene );
     canvas2OBJ= gltf.scene.children[0];
     canvas2OBJ.scale.set(2,2,2);
@@ -134,10 +131,10 @@ camera2.position.setZ(30);
 camera2.position.setX(0)
 renderer2.render(scene2, camera2)
 
-const pointLight2 = new THREE.PointLight(0xffffff)
+const pointLight2 = new THREE.PointLight(0xFFFFFF)
 pointLight2.position.set(15,5,5)
 
-const ambientLight2= new THREE.AmbientLight(0xffffff)
+const ambientLight2= new THREE.AmbientLight(0xFFFFFF)
 ambientLight2.position.set(15,5,5)
 scene2.add(pointLight2,ambientLight2)
 
