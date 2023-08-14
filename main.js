@@ -63,8 +63,6 @@ scene.add( rectLight, rectLight2 )
 scene.add(pointLight,pointLight12)
 
 
-
-
 function animate(){
     requestAnimationFrame(animate);
     mesh.rotation.y +=0.01;
@@ -118,10 +116,6 @@ scene2.background = new THREE.Color('Black')
 scene2.add(camera2)
 
 
-
-
-
-
 loader2.load( './dist/WireFrame/WireFrameFace_Omar.gltf', function ( gltf ) {
 	scene2.add( gltf.scene );
     canvas2OBJ= gltf.scene.children[0];
@@ -144,8 +138,8 @@ const ambientLight2= new THREE.AmbientLight(0xFFFFFF)
 ambientLight2.position.set(15,5,5)
 scene2.add(pointLight2,ambientLight2)
 
-const lightHelper2 = new THREE.PointLightHelper(pointLight)
-scene2.add(lightHelper2)
+// const lightHelper2 = new THREE.PointLightHelper(pointLight)
+// scene2.add(lightHelper2)
 
 
 
