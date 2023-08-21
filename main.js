@@ -100,7 +100,6 @@ const loop = () => {
 loop()
 
 
-
 //Canvas2 Three.js SetUp
 let canvas2OBJ
 const loader2 = new GLTFLoader();
@@ -138,10 +137,6 @@ const ambientLight2= new THREE.AmbientLight(0xFFFFFF)
 ambientLight2.position.set(15,5,5)
 scene2.add(pointLight2,ambientLight2)
 
-// const lightHelper2 = new THREE.PointLightHelper(pointLight)
-// scene2.add(lightHelper2)
-
-
 
 function animate2(){
     requestAnimationFrame(animate2);
@@ -177,12 +172,3 @@ const loop2 = () => {
     window.requestAnimationFrame
 }
 loop2();
-
-// window.onresize = function () {
-//     canvas = document.querySelector('#bg');
-//     canvas.style.width = '100%';
-//     canvas.style.height = '100%';
-//     canvas2 = document.querySelector('#secondcanvas');
-//     canvas2.style.width = '100%';
-//     canvas2.style.height = '100%';
-// }
