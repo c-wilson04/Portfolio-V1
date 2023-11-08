@@ -1,4 +1,4 @@
-import './contact.css'
+
 window.onload = function (){
 let bgMenuBtn = document.querySelector('.burger-menu-btn') 
 let bgMenu = document.querySelector('.burger-menu') 
