@@ -1,5 +1,5 @@
 
-//import './index.css'
+import './index.css'
 import * as THREE from "three";
 import { AmbientLight } from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js"

@@ -2,6 +2,7 @@ import { defineConfig, resolveBaseUrl } from 'vite';
 import { resolve } from 'path'
 
 export default defineConfig({
+  base: '/dist/',
     assetsInclude: ['**/*.gltf'],
     build: {
       rollupOptions: {
