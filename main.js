@@ -1,3 +1,4 @@
+
 //import './index.css'
 import * as THREE from "three";
 import { AmbientLight } from "three";
@@ -41,7 +42,7 @@ camera.position.setZ(30);
 camera.position.setX(0)
 renderer.render(scene, camera)
 
-const material = new THREE.MeshBasicMaterial({color: 0xFF6347})
+const material = new THREE.MeshBasicMaterial({color: 0xfc9803})
 material.wireframe=true;
 const geometry = new THREE.TorusGeometry(15.4, 3, 9, 100)
 const mesh = new THREE.Mesh(geometry, material)
@@ -91,6 +92,7 @@ window.addEventListener("resize", () => {
         mesh.scale.set(0.8,0.8,0.8);
         canvas2OBJ.scale.set(1,1,1);
     }
+    history.go()
 })
 
 const loop = () => {
@@ -98,6 +100,7 @@ const loop = () => {
     window.requestAnimationFrame
 }
 loop()
+
 
 
 //Canvas2 Three.js SetUp
@@ -137,6 +140,10 @@ const ambientLight2= new THREE.AmbientLight(0xFFFFFF)
 ambientLight2.position.set(15,5,5)
 scene2.add(pointLight2,ambientLight2)
 
+// const lightHelper2 = new THREE.PointLightHelper(pointLight)
+// scene2.add(lightHelper2)
+
+
 
 function animate2(){
     requestAnimationFrame(animate2);
@@ -172,3 +179,26 @@ const loop2 = () => {
     window.requestAnimationFrame
 }
 loop2();
+
+let bgMenuBtn = document.querySelector('.burger-menu-btn') 
+let bgMenu = document.querySelector('.burger-menu') 
+let isBurgerOpen = false;
+bgMenuBtn.onclick = function () {
+    if (!isBurgerOpen) {
+        bgMenu.style.display = "block";
+        bgMenuBtn.style.color = "orange";
+        isBurgerOpen = true;
+    }
+    else if (isBurgerOpen) {
+        bgMenu.style.display = "none";
+        bgMenuBtn.style.color = "black";
+        isBurgerOpen = false;
+    }
+}
+let click = document.querySelectorAll('.click')
+click.forEach(element => {
+     element.onclick = function () {
+        bgMenu.style.display = "none";
+        bgMenuBtn.style.color = "black"
+     }
+});
