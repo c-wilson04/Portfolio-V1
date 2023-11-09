@@ -25,7 +25,7 @@ scene.background = new THREE.Color('Black')
 scene.add(camera)
 
 
-loader.load( './dist/Car/scene.gltf', function ( gltf ) {
+loader.load( './Car/scene.gltf', function ( gltf ) {
 	scene.add( gltf.scene );
     secondOBJ= gltf.scene.children[0];
     secondOBJ.scale.set(5,5,5);
@@ -118,7 +118,7 @@ scene2.background = new THREE.Color('Black')
 scene2.add(camera2)
 
 
-loader2.load( './dist/WireFrame/WireFrameFace_Omar.gltf', function ( gltf ) {
+loader2.load( './WireFrame/WireFrameFace_Omar.gltf', function ( gltf ) {
 	scene2.add( gltf.scene );
     canvas2OBJ= gltf.scene.children[0];
     canvas2OBJ.scale.set(2,2,2);

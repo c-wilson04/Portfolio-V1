@@ -3,7 +3,7 @@ import { resolve } from 'path'
 
 export default defineConfig({
   assetsInclude: ['**/*.gltf'],
-  base: '/c-wilson04.github.io/Portfolio-V1',
+  // base: '/c-wilson04.github.io/Portfolio-V1',
     build: {
       rollupOptions: {
         input: {
