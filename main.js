@@ -85,15 +85,11 @@ window.addEventListener("resize", () => {
     camera.aspect = canvasWidth/canvasHeight
     camera.updateProjectionMatrix
     renderer.setSize(canvasWidth, canvasHeight)
-    console.log("width is " + window.innerWidth)
-    if(window.innerWidth <= 414){
-        console.log("active");
-        secondOBJ.scale.set(1,1,1);
-        mesh.scale.set(0.8,0.8,0.8);
-        canvas2OBJ.scale.set(1,1,1);
-    }
-    history.go()
-})
+    if(window.innerWidth > 660){
+        history.go();
+}
+}
+)
 
 const loop = () => {
     renderer.render(scene, camera)
