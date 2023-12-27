@@ -2,9 +2,9 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path'
 
 export default defineConfig({
-  base: 'Portfolio-V1',
+  base: '/Portfolio-V1',
   assetsInclude: ['**/*.gltf'],
-  // base: '/c-wilson04.github.io/Portfolio-V1',
+ 
     build: {
       rollupOptions: {
         input: {
